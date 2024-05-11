@@ -1,0 +1,39 @@
+---
+import Navigation from "../components/Navigation.astro";
+interface Props {
+    title: string;
+}
+
+const {title = "Page"} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="description" content="Astro description"/>
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+    <meta name="generator" content={Astro.generator}/>
+    <title>{title}</title>
+</head>
+<body>
+<Navigation/>
+<slot/>
+</body>
+</html>
+
+<style is:global>
+    @font-face {
+        font-family: "Glitch";
+        src: url("/fonts/glitch.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    body {
+        background: rgb(33,11,44);
+        background: radial-gradient(circle, rgba(33,11,44,1) 0%, rgba(9,35,39,1) 0%, rgba(33,11,44,1) 55%, rgba(9,35,39,1) 100%);
+    }
+</style>
