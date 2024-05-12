@@ -1,5 +1,6 @@
 ---
 import Navigation from "../components/navigation/Navigation.astro";
+
 interface Props {
     title: string;
 }
@@ -7,7 +8,6 @@ interface Props {
 const {title = "Page"} = Astro.props;
 ---
 
-<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
@@ -41,6 +41,7 @@ const {title = "Page"} = Astro.props;
         background: radial-gradient(circle, rgba(33, 11, 44, 1) 0%, rgba(9, 35, 39, 1) 0%, rgba(33, 11, 44, 1) 55%, rgba(9, 35, 39, 1) 100%);
         background-size: 400% 400%;
         animation: gradient 30s ease infinite;
+        overflow-x: hidden;
     }
 
     @keyframes gradient {

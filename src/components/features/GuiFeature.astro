@@ -1,4 +1,5 @@
 ---
+import FeatureLayout from "../../layouts/FeatureLayout.astro";
 interface Props {
     layers: Array<string>;
 }
@@ -6,9 +7,12 @@ interface Props {
 const {layers} = Astro.props;
 ---
 
-<div>
-    {layers.map(layer => <img src=`/images/layers/${layer}` alt=""></img>)}
-</div>
+<FeatureLayout animation="0">
+    <h2>Perfect gui</h2>
+    <div>
+        {layers.map(layer => <img src=`/images/layers/${layer}` alt=""></img>)}
+    </div>
+</FeatureLayout>
 
 <style>
     div {
