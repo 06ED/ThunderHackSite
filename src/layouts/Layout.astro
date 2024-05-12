@@ -1,5 +1,5 @@
 ---
-import Navigation from "../components/Navigation.astro";
+import Navigation from "../components/navigation/Navigation.astro";
 interface Props {
     title: string;
 }
@@ -23,6 +23,11 @@ const {title = "Page"} = Astro.props;
 </html>
 
 <style is:global>
+    :root {
+        --gradient: linear-gradient(45deg, #bc96e6, #6d8dd2, #1d7eac, #006a7d, #0b5351);
+        --primary-black: #20262E;
+    }
+
     @font-face {
         font-family: "Glitch";
         src: url("/fonts/glitch.ttf") format("truetype");
@@ -32,8 +37,8 @@ const {title = "Page"} = Astro.props;
     }
 
     body {
-        background: rgb(33,11,44);
-        background: radial-gradient(circle, rgba(33,11,44,1) 0%, rgba(9,35,39,1) 0%, rgba(33,11,44,1) 55%, rgba(9,35,39,1) 100%);
+        background: rgb(33, 11, 44);
+        background: radial-gradient(circle, rgba(33, 11, 44, 1) 0%, rgba(9, 35, 39, 1) 0%, rgba(33, 11, 44, 1) 55%, rgba(9, 35, 39, 1) 100%);
         background-size: 400% 400%;
         animation: gradient 30s ease infinite;
     }

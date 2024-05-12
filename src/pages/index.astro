@@ -1,6 +1,52 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import LayerImage from "../components/features/LayerImage.astro";
+import Video from "../components/Video.astro";
+
+const cards = [
+    {title: "Combat", description: "This client has decent pvp features, like fast AutoCrystal and AutoAnchor"},
+    {title: "Movement", description: "ThunderHack has one of the best renders among minecraft clients"},
+    {
+        title: "Render",
+        description: "A large number of movement features will make your gaming experience unforgettable"
+    },
+];
 ---
-<Layout title="Main page">
-    <h1>Main page lol</h1>
+
+<Layout title="ThunderHack">
+    <Video/>
+    <div class="animated">
+        <ul class="justify-between flex items-center">
+            {cards.map(card =>
+                    <Card title={card.title} description={card.description}/>)}
+        </ul>
+    </div>
+    <div class="justify-between flex items-center m-20 animated">
+        <h2>Perfect gui</h2>
+        <LayerImage layers={["1.png", "2.png", "3.png"]}/>
+    </div>
 </Layout>
+
+<style>
+    h2 {
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 50px;
+        font-style: oblique;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .animated {
+        opacity: 0;
+        transition: all 2s ease-out;
+    }
+
+    .animate {
+        opacity: 1;
+    }
+</style>
+
+<script is:inline src="/scripts/index.ts" lang="ts"></script>

@@ -1,32 +1,20 @@
 ---
-import Logo from "./Logo.astro";
+interface Props {
+    title: string;
+    url: string;
+}
 
-const routes = [
-    {url: "/", title: "Home"},
-    {url: "/download", title: "Download"},
-    {url: "https://www.donationalerts.com/r/06ed", title: "Donate"}
-];
+const {title, url} = Astro.props;
 ---
-<nav class="flex h-[70px] absolute top-0 left-0 right-0 px-3 items-center justify-between">
-    <Logo/>
-    <ul class="list-none flex">
-        {routes.map(route =>
-                <li class="mr-2"><a class="text" href={route.url}>{route.title}</a></li>)}
-    </ul>
-</nav>
-
+<li class="mr-2"><a class="text" href={url}>{title}</a></li>
 
 <style>
-    nav {
-        background: rgba(0, 0, 0, 0.2);
-        backdrop-filter: blur(4px);
-    }
-
     .text {
         color: aliceblue;
     }
+
     .text:hover {
-        background: linear-gradient(to right, #bc96e6, #6d8dd2, #1d7eac, #006a7d, #0b5351);
+        background: var(--gradient);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
@@ -49,7 +37,7 @@ const routes = [
         height: 2px;
         left: 100%;
         position: absolute;
-        background-image: linear-gradient(to right, #bc96e6, #6d8dd2, #1d7eac, #006a7d, #0b5351);
+        background-image: var(--gradient);
         transition: width 0.3s ease 0s, left 0.3s ease 0s;
         width: 0;
     }
@@ -66,7 +54,7 @@ const routes = [
         height: 2px;
         left: 0;
         position: absolute;
-        background-image: linear-gradient(to right, #bc96e6, #6d8dd2, #1d7eac, #006a7d, #0b5351);
+        background-image: var(--gradient);
         transition: width 0.3s ease 0s, left 0.3s ease 0s;
         width: 0;
     }

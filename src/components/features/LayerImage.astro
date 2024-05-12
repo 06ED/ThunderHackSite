@@ -1,0 +1,42 @@
+---
+interface Props {
+    layers: Array<string>;
+}
+
+const {layers} = Astro.props;
+---
+
+<div>
+    {layers.map(layer => <img src=`/images/layers/${layer}` alt=""></img>)}
+</div>
+
+<style>
+    div {
+        width: 950px;
+        height: 400px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        transform: rotateY(30deg) rotateX(-13deg);
+        transition: 0.5s;
+    }
+
+    div img {
+        position: absolute;
+        width: 100%;
+        transition: 0.5s;
+    }
+
+    div:hover img:nth-child(3) {
+        transform: translate(-180px, -40px);
+        opacity: 0.8;
+    }
+
+    div:hover img:nth-child(2) {
+        transform: translate(-140px, -20px);
+        opacity: 0.8;
+    }
+
+    div:hover img:nth-child(1) {
+        opacity: 0.4;
+    }
+</style>
