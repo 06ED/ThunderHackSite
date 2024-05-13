@@ -3,24 +3,26 @@ import Logo from "../Logo.astro";
 import LinkItem from "./LinkItem.astro";
 
 const routes = [
-    {url: "/", title: "Home"},
-    {url: "/download", title: "Download"},
-    {url: "https://www.donationalerts.com/r/06ed", title: "Donate"}
+  { url: "/", title: "Home" },
+  { url: "/download", title: "Download" },
+  { url: "https://www.donationalerts.com/r/06ed", title: "Donate" },
 ];
 ---
-<nav class="flex h-[70px] absolute top-0 left-0 right-0 px-3 items-center justify-between">
-    <Logo/>
-    <ul class="list-none flex">
-        {routes.map(route =>
-                <LinkItem title={route.title} url={route.url}/>)}
-    </ul>
+
+<nav
+  class="flex h-[70px] absolute top-0 left-0 right-0 px-3 items-center justify-between"
+>
+  <Logo />
+  <ul class="list-none flex">
+    {routes.map((route) => <LinkItem title={route.title} url={route.url} />)}
+  </ul>
 </nav>
 
 <style>
-    nav {
-        background: rgba(32, 38, 46, 60%);
-        backdrop-filter: blur(16px);
-        position: fixed;
-        z-index: 100;
-    }
+  nav {
+    background: rgba(32, 38, 46, 60%);
+    backdrop-filter: blur(16px);
+    position: fixed;
+    z-index: 100;
+  }
 </style>

@@ -1,23 +1,25 @@
 ---
 interface Props {
-    animation: number;
+  animation: number;
 }
 
-const {animation} = Astro.props;
+const { animation } = Astro.props;
 ---
 
-<div class=`ml-20 mr-20 mb-20 mt-20 justify-between flex opacity-animation items-center right-animation ${animation == 0 ? "left-animation" : "right-animation"}`>
-    <slot/>
+<div
+  class=`ml-20 mr-20 mb-20 mt-20 justify-between flex opacity-animation items-center right-animation ${animation == 0 ? "left-animation" : "right-animation"}`
+>
+  <slot />
 </div>
 
 <style is:global>
-    h2 {
-        background: var(--gradient);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-size: 50px;
-        font-style: oblique;
-        font-weight: bold;
-        text-transform: uppercase;
-    }
+  h2 {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 50px;
+    font-style: oblique;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
 </style>
