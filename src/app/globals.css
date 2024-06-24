@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 @layer base {
+  @font-face {
+    font-family: "Glitch";
+    src: url("/fonts/glitch.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
@@ -98,16 +104,16 @@
 }
 
 @property --num {
-  syntax: '<integer>';
+  syntax: "<integer>";
   initial-value: 0;
   inherits: false;
 }
 
 @keyframes counter {
   from {
-      --num: 0;
+    --num: 0;
   }
   to {
-      --num: 40;
+    --num: 40;
   }
-}    
+}
