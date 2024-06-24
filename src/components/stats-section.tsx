@@ -42,7 +42,7 @@ const StatsSection = ({ downloads }: { downloads: number }) => {
               --num: 0;
             }
             to {
-              --num: ${downloads.toString().slice(0, -3)};
+              --num: ${downloads.toString().charAt(0)};
             }
           }
         `}
