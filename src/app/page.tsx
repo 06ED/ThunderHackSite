@@ -1,9 +1,11 @@
 "use client";
 
 import GuiSection from "@/components/gui-section";
+import ModulesSection from "@/components/modules-section";
 import NavBar from "@/components/navbar";
 import StatsSection from "@/components/stats-section";
 import useGitHubDownloads from "@/hooks/useGithubDownloads";
+import useModuleCount from "@/hooks/useModuleCount";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -20,12 +22,15 @@ const developers = [
 
 export default function Home() {
   let downloads = useGitHubDownloads("Pan4ur", "thunderhack-recode");
+  const repoUrl = 'https://github.com/Pan4ur/ThunderHack-Recode/tree/main/src/main/java/thunder/hack/modules';
+  const { loading, error, modules } = useModuleCount(repoUrl);
 
   if (!downloads) {
     downloads = 10
   }
 
   console.log(downloads);
+  console.log(modules)
 
   return (
     <div className="flex flex-col min-h-[100dvh]">
@@ -74,12 +79,8 @@ export default function Home() {
         </section>
         <StatsSection downloads={downloads} />
         <GuiSection />
+        <ModulesSection modules={modules} />
       </main>
-      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t mt-10">
-        <p className="text-xs text-muted-foreground">
-          &copy; {new Date().getFullYear().toString()} THUNDERHACK
-        </p>
-      </footer>
     </div>
   );
 }
