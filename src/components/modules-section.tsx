@@ -13,13 +13,8 @@ const ModulesSection = ({ modules }: { modules: number }) => {
             }}
           >
             <div className="flex flex-col justify-center items-center text-center ">
-              <span className="text-6xl font-extrabold">
-                <span
-                  className="bg-gradient-to-r from-purple-500 to-sky-500 text-transparent bg-clip-text"
-                  style={{
-                    WebkitBackgroundClip: "text",
-                  }}
-                >
+              <span className="text-8xl font-extrabold">
+                <span className="bg-gradient-to-r from-purple-500 to-sky-500 text-transparent bg-clip-text">
                   {modules}
                 </span>
               </span>
@@ -37,7 +32,8 @@ const ModulesSection = ({ modules }: { modules: number }) => {
           </h1>
           <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed text-right">
             ThunderHack is developed with convenience and efficiency in mind, we
-            have an extensive suite of over {modules} modules to greatly enhance your Minecraft gameplay.
+            have an extensive suite of over {modules} modules to greatly enhance
+            your Minecraft gameplay.
           </p>
         </div>
       </div>
