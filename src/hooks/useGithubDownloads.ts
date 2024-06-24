@@ -13,16 +13,22 @@ const useGitHubDownloads = (repoOwner: string, repoName: string) => {
   useEffect(() => {
     const fetchDownloads = async () => {
       try {
+        // Fetch all releases instead of just the latest release
         const response = await fetch(
-          `https://api.github.com/repos/${repoOwner}/${repoName}/releases/latest`
+          `https://api.github.com/repos/${repoOwner}/${repoName}/releases`
         );
         if (!response.ok) {
           throw new Error('Failed to fetch GitHub releases');
         }
-        const data: GitHubRelease = await response.json();
-        
-        // Calculate total downloads from all assets
-        const totalDownloads = data.assets.reduce((total, asset) => total + asset.download_count, 0);
+        const data: GitHubRelease[] = await response.json();
+
+        // Calculate total downloads from all releases and all assets
+        let totalDownloads = 0;
+        data.forEach(release => {
+          release.assets.forEach(asset => {
+            totalDownloads += asset.download_count;
+          });
+        });
 
         setDownloads(totalDownloads);
       } catch (error) {

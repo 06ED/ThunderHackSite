@@ -2,6 +2,7 @@
 
 import GuiSection from "@/components/gui-section";
 import NavBar from "@/components/navbar";
+import StatsSection from "@/components/stats-section";
 import useGitHubDownloads from "@/hooks/useGithubDownloads";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,7 +19,11 @@ const developers = [
 ];
 
 export default function Home() {
-  const downloads = useGitHubDownloads("Pan4ur", "thunderhack-recode");
+  let downloads = useGitHubDownloads("Pan4ur", "thunderhack-recode");
+
+  if (!downloads) {
+    downloads = 10
+  }
 
   console.log(downloads);
 
@@ -67,26 +72,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 relative overflow-hidden">
-          <div className="container px-4 md:px-6">
-            <div className="grid gap-8 md:grid-cols-3 text-center">
-              <div className="flex flex-col items-center">
-                <h2 className="text-4xl font-bold tabular-nums animate-[counter_3s_ease-out_forwards] [counter-set:_num_var(--num)] before:content-[counter(num)]">
-                  <span className="supports-[counter-set]:sr-only">10</span>K+
-                </h2>
-                <p className="text-lg text-gray-600">Downloads</p>
-              </div>
-              <div className="flex flex-col items-center">
-                <h2 className="text-4xl font-bold">500K+</h2>
-                <p className="text-lg text-gray-600">Active Users</p>
-              </div>
-              <div className="flex flex-col items-center">
-                <h2 className="text-4xl font-bold">4.9/5</h2>
-                <p className="text-lg text-gray-600">User Ratings</p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <StatsSection downloads={downloads} />
         <GuiSection />
       </main>
       <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t mt-10">
