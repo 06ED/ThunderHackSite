@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const NavBar = () => {
   return (
-    <header className="px-4 lg:px-6 h-14 flex items-center sticky top-0 z-10 bg-white backdrop-filter backdrop-blur-lg bg-opacity-30 border-b border-gray-200 z-50">
+    <header className="px-4 lg:px-6 h-14 flex items-center sticky top-0 bg-white backdrop-filter backdrop-blur-lg bg-opacity-30 border-b border-gray-200 z-40">
       <Link
         href="#"
         className="flex items-center justify-center"
