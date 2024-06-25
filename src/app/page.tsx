@@ -1,9 +1,12 @@
 "use client";
 
+import CommunitySection from "@/components/community-section";
+import GithubSection from "@/components/github-section";
 import GuiSection from "@/components/gui-section";
 import ModulesSection from "@/components/modules-section";
 import NavBar from "@/components/navbar";
 import StatsSection from "@/components/stats-section";
+import VideoSection from "@/components/video-section";
 import useGitHubDownloads from "@/hooks/useGithubDownloads";
 import useModuleCount from "@/hooks/useModuleCount";
 import Image from "next/image";
@@ -81,17 +84,9 @@ export default function Home() {
         <StatsSection downloads={downloads} />
         <GuiSection />
         <ModulesSection modules={modules} />
-
-        <section>
-          <div className="video-iframe-div relative">
-            <iframe
-              className="video-iframe absolute top-0 left-0 w-full h-full"
-              src="https://www.youtube-nocookie.com/embed/rEgLGFQY-mg?autoplay=1&loop=1&playlist=rEgLGFQY-mg&controls=0&showinfo=0&rel=0&mute=1&vq=hd1080"
-              allowFullScreen
-            ></iframe>
-            <div className="video-gradient absolute top-0 left-0 w-full h-full pointer-events-none"></div>
-          </div>
-        </section>
+        <VideoSection />
+        <GithubSection />
+        <CommunitySection />
       </main>
     </div>
   );
