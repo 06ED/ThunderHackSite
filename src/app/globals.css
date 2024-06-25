@@ -75,6 +75,7 @@
 @layer base {
   * {
     @apply border-border;
+    scrollbar-width: none;
   }
   body {
     @apply bg-background text-foreground;
