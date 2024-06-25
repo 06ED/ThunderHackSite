@@ -13,14 +13,14 @@ const NavBar = () => {
       </Link>
       <nav className="ml-auto flex gap-4 sm:gap-6 text-center flex justify-center items-center">
         <Link
-          href="#"
+          href="#features"
           className="text-sm font-medium hover:underline underline-offset-4"
           prefetch={false}
         >
           Features
         </Link>
         <Link
-          href="#"
+          href="#github"
           className="text-sm font-medium hover:underline underline-offset-4"
           prefetch={false}
         >
