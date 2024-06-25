@@ -17,6 +17,9 @@ const ModulesSection = ({ modules }: { modules: number }) => {
                 <span className="bg-gradient-to-r from-purple-500 to-sky-500 text-transparent bg-clip-text">
                   {modules}
                 </span>
+                <span className="text-8xl bg-gradient-to-r from-purple-500 to-purple-600 text-transparent bg-clip-text">
+                  +
+                </span>
               </span>
               <h1 className="font-extrabold text-3xl text-gray-800 mt-4">
                 Modules

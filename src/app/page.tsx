@@ -22,15 +22,16 @@ const developers = [
 
 export default function Home() {
   let downloads = useGitHubDownloads("Pan4ur", "thunderhack-recode");
-  const repoUrl = 'https://github.com/Pan4ur/ThunderHack-Recode/tree/main/src/main/java/thunder/hack/modules';
+  const repoUrl =
+    "https://github.com/Pan4ur/ThunderHack-Recode/tree/main/src/main/java/thunder/hack/modules";
   const { loading, error, modules } = useModuleCount(repoUrl);
 
   if (!downloads) {
-    downloads = 10
+    downloads = 10;
   }
 
   console.log(downloads);
-  console.log(modules)
+  console.log(modules);
 
   return (
     <div className="flex flex-col min-h-[100dvh]">
@@ -80,6 +81,17 @@ export default function Home() {
         <StatsSection downloads={downloads} />
         <GuiSection />
         <ModulesSection modules={modules} />
+
+        <section>
+          <div className="video-iframe-div relative">
+            <iframe
+              className="video-iframe absolute top-0 left-0 w-full h-full"
+              src="https://www.youtube-nocookie.com/embed/rEgLGFQY-mg?autoplay=1&loop=1&playlist=rEgLGFQY-mg&controls=0&showinfo=0&rel=0&mute=1&vq=hd1080"
+              allowFullScreen
+            ></iframe>
+            <div className="video-gradient absolute top-0 left-0 w-full h-full pointer-events-none"></div>
+          </div>
+        </section>
       </main>
     </div>
   );
