@@ -1,3 +1,5 @@
+import useTotalUsers from "@/hooks/useTotalUsers";
+
 const formatNumber = (number: number) => {
   if (number >= 1000000) {
     return (number / 1000000).toFixed(1) + "M";
@@ -10,6 +12,7 @@ const formatNumber = (number: number) => {
 
 const StatsSection = ({ downloads }: { downloads: number }) => {
   const formattedDownloads = formatNumber(downloads);
+  const { totalUsersCount, error, isLoading } = useTotalUsers();
 
   return (
     <section className="w-full py-12 md:py-24 lg:py-32 relative overflow-hidden">
@@ -25,7 +28,7 @@ const StatsSection = ({ downloads }: { downloads: number }) => {
             <p className="text-lg text-gray-600">Downloads</p>
           </div>
           <div className="flex flex-col items-center">
-            <h2 className="text-4xl font-bold">500K+</h2>
+            <h2 className="text-4xl font-bold">{totalUsersCount}</h2>
             <p className="text-lg text-gray-600">Active Users</p>
           </div>
           <div className="flex flex-col items-center">

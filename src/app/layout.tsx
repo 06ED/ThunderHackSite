@@ -24,7 +24,7 @@ export default function RootLayout({
         defaultTheme="dark"
         disableTransitionOnChange
       >
-        <body className={inter.className}>
+        <body className={inter.className} suppressHydrationWarning>
           <ProgressBar />
           <main>{children}</main>
           <Footer />
