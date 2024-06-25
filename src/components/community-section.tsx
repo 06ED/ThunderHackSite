@@ -1,7 +1,7 @@
 const CommunitySection = () => {
   return (
     <section className="relative w-full overflow-hidden">
-      <div className="container relative z-10 grid grid-cols-1 items-center gap-8 py-24 md:grid-cols-2 md:py-32 lg:py-40">
+      <div className="container relative z-10 grid grid-cols-1 items-center gap-8 md:grid-cols-2">
         <div className="mr-40 mt-20">
           <iframe
             src="https://discord.com/widget?id=1140266441082404924&theme=dark"
