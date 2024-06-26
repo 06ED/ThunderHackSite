@@ -22,12 +22,10 @@ const useModuleCount = (repoUrl: string): HookReturn => {
   useEffect(() => {
     const fetchFilesCount = async () => {
       try {
-        // Directories to check
         const directoriesToCheck = ['base', 'client', 'combat', 'misc', 'movement', 'player', 'render'];
 
         let totalCount = 0;
 
-        // Function to count files recursively in a directory
         const countFilesRecursively = async (directory: string) => {
           const apiUrl = `https://api.github.com/repos/Pan4ur/ThunderHack-Recode/contents/src/main/java/thunder/hack/modules/${directory}`;
           const response = await axios.get<GitHubContent[]>(apiUrl);
@@ -41,7 +39,6 @@ const useModuleCount = (repoUrl: string): HookReturn => {
           }
         };
 
-        // Count files in each specified directory
         for (const dir of directoriesToCheck) {
           await countFilesRecursively(dir);
         }

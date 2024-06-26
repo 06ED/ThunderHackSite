@@ -13,7 +13,6 @@ const useGitHubDownloads = (repoOwner: string, repoName: string) => {
   useEffect(() => {
     const fetchDownloads = async () => {
       try {
-        // Fetch all releases instead of just the latest release
         const response = await fetch(
           `https://api.github.com/repos/${repoOwner}/${repoName}/releases`
         );
@@ -22,7 +21,6 @@ const useGitHubDownloads = (repoOwner: string, repoName: string) => {
         }
         const data: GitHubRelease[] = await response.json();
 
-        // Calculate total downloads from all releases and all assets
         let totalDownloads = 0;
         data.forEach(release => {
           release.assets.forEach(asset => {
@@ -38,11 +36,6 @@ const useGitHubDownloads = (repoOwner: string, repoName: string) => {
     };
 
     fetchDownloads();
-
-    // Clean-up function (optional)
-    return () => {
-      // Perform any cleanup if needed
-    };
   }, [repoOwner, repoName]);
 
   return downloads;
