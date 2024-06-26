@@ -1,5 +1,3 @@
-import React from "react";
-
 const ModulesSection = ({ modules }: { modules: number }) => {
   return (
     <section className="relative w-full overflow-hidden">
