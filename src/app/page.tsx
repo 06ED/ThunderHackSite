@@ -6,6 +6,7 @@ import GuiSection from "@/components/gui-section";
 import ModulesSection from "@/components/modules-section";
 import NavBar from "@/components/navbar";
 import StatsSection from "@/components/stats-section";
+import { AlertDialogFooter, AlertDialogHeader, AlertDialogTrigger, AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogTitle } from "@/components/ui/alert-dialog";
 import VideoSection from "@/components/video-section";
 import useGitHubDownloads from "@/hooks/useGithubDownloads";
 import useModuleCount from "@/hooks/useModuleCount";
@@ -54,20 +55,34 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row" >
+                  <AlertDialog>
+                    <AlertDialogTrigger
+                      className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                      style={{
+                        background: "linear-gradient(#fff, #fff) padding-box, linear-gradient(60deg, #a855f7, #a855f7) border-box",
+                        border: "2px solid transparent",
+                        borderRadius: "10px"
+                      }}
+                    >
+                      Download
+                    </AlertDialogTrigger>
+                    <AlertDialogContent>
+                      <AlertDialogHeader>
+                        <AlertDialogTitle>How do you want to download the client?</AlertDialogTitle>
+                        <AlertDialogDescription>
+                          You can download both a client mod for the current version and an auto-update mod that will get the latest version automatically.
+                        </AlertDialogDescription>
+                      </AlertDialogHeader>
+                      <AlertDialogFooter>
+                        <AlertDialogCancel>Cancel</AlertDialogCancel>
+                        <AlertDialogAction>Client mod</AlertDialogAction>
+                        <AlertDialogAction>Auto-update mod</AlertDialogAction>
+                      </AlertDialogFooter>
+                    </AlertDialogContent>
+                  </AlertDialog>
+
                   <Link
-                    href="#"
-                    className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-                    prefetch={false}
-                    style={{
-                      background: "linear-gradient(#fff, #fff) padding-box, linear-gradient(60deg, #a855f7, #a855f7) border-box",
-                      border: "2px solid transparent",
-                      borderRadius: "10px"
-                    }}
-                  >
-                    Download
-                  </Link>
-                  <Link
-                    href="#"
+                    href="https://github.com/Pan4ur/ThunderHack-Recode"
                     className="inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
                     prefetch={false}
                   >
