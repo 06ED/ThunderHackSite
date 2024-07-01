@@ -48,6 +48,7 @@
     "embla-carousel-react": "^8.1.5",
     "framer-motion": "^11.2.11",
     "input-otp": "^1.2.4",
+    "lottie-react": "^2.4.0",
     "lucide-react": "^0.396.0",
     "mini-svg-data-uri": "^1.4.4",
     "next": "14.2.4",

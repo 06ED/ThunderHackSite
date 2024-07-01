@@ -53,13 +53,18 @@ export default function Home() {
                     your gameplay and streamlines your experience.
                   </p>
                 </div>
-                <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                <div className="flex flex-col gap-2 min-[400px]:flex-row" >
                   <Link
                     href="#"
                     className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
                     prefetch={false}
+                    style={{
+                      background: "linear-gradient(#fff, #fff) padding-box, linear-gradient(60deg, #a855f7, #a855f7) border-box",
+                      border: "2px solid transparent",
+                      borderRadius: "10px"
+                    }}
                   >
-                    Download Now
+                    Download
                   </Link>
                   <Link
                     href="#"
@@ -88,6 +93,6 @@ export default function Home() {
         <GithubSection />
         <CommunitySection />
       </main>
-    </div>
+    </div >
   );
 }
